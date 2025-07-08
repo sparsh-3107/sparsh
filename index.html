@@ -45,6 +45,12 @@
       box-shadow: inset 0 0 60px #ff80ab33;
       position: relative;
       transform-style: preserve-3d;
+      animation: pageTurn 1.2s ease;
+    }
+    @keyframes pageTurn {
+      0% { transform: rotateY(90deg) scale(0.8); opacity: 0; }
+      50% { transform: rotateY(-10deg) scale(1.02); }
+      100% { transform: rotateY(0deg) scale(1); opacity: 1; }
     }
     .section::before,
     .section::after {
@@ -98,7 +104,7 @@
       cursor: pointer;
       box-shadow: 0 0 10px #ff80ab88;
     }
-    .hearts, .sparkles {
+    .hearts, .sparkles, .fireworks {
       position: fixed;
       width: 100%;
       height: 100%;
@@ -119,6 +125,61 @@
       0% { transform: translateY(100vh) rotate(0); opacity: 1; }
       100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
     }
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      display: none;
+      color: white;
+      text-align: center;
+      max-width: 80vw;
+      z-index: 20;
+      backdrop-filter: blur(8px);
+    }
+    .popup.show { display: block; animation: fadeInUp 1s ease; }
+    .popup button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #ff80ab;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 0.5rem;
+    }
+    .reveal-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #ff80ab;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      color: white;
+      cursor: pointer;
+      z-index: 20;
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: 0.15em solid #ff80ab;
+      white-space: nowrap;
+      animation: typing 4s steps(10, end), blink 0.75s step-end infinite;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.6em;
+      margin: 2rem auto;
+      text-align: center;
+      width: 0;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 10ch; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
   </style>
 </head>
 <body>
@@ -129,7 +190,7 @@
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_cfb9743a25.mp3" type="audio/mpeg">
   </audio>
 
-  <h1>Happy Birthday, maya 🎉</h1>
+  <h1 class="typewriter">maya...</h1>
 
   <div class="slider" id="slider">
     <div class="section"><div class="fade-text">🎂 Today, the universe smiles because you were born. You light up everything with your warmth and kindness. I’m endlessly grateful to have you, and today is just a small reminder of how magical you truly are. 💫</div></div>
@@ -143,6 +204,12 @@
   <div class="nav-btns">
     <button onclick="prevSlide()">Prev</button>
     <button onclick="nextSlide()">Next</button>
+  </div>
+
+  <button class="reveal-btn" onclick="togglePopup()">💌 Reveal Love Letter</button>
+  <div class="popup" id="popup">
+    <p>To my dearest maya, <br> I hope this day brings you as much joy as your love brings to my life. You’re not just a part of my story, you are my whole book. 💖</p>
+    <button onclick="togglePopup()">Close</button>
   </div>
 
   <div class="hearts" id="hearts"></div>
@@ -179,6 +246,11 @@
     }
     setInterval(() => createFloaty('heart', '❤️', 'hearts'), 400);
     setInterval(() => createFloaty('sparkle', '✨', 'sparkles'), 600);
+
+    function togglePopup() {
+      const popup = document.getElementById('popup');
+      popup.classList.toggle('show');
+    }
   </script>
 </body>
 </html>
