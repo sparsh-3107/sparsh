@@ -6,44 +6,45 @@
   <title>Happy Birthday maya ❤️🧿🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top left, #1a1a2e, #0f0f1b);
-      overflow-x: hidden;
-      scroll-behavior: smooth;
+      background: linear-gradient(135deg, #0f0f1b, #1a1a2e);
+      overflow: hidden;
       color: #ffffff;
-      text-align: center;
     }
     h1 {
       font-size: 3em;
-      margin-top: 2rem;
+      margin: 2rem auto;
       font-family: 'Pacifico', cursive;
-      animation: popIn 1s ease forwards;
+      text-align: center;
+      background: linear-gradient(90deg, #ff80ab, #ffffff, #ff80ab);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shine 3s linear infinite;
     }
-    @keyframes popIn {
-      from { transform: scale(0); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    @keyframes shine {
+      to { background-position: -200% center; }
+    }
+    .slider {
+      display: flex;
+      transition: transform 1s ease-in-out;
+      width: 600vw;
     }
     .section {
-      min-height: 100vh;
+      min-width: 100vw;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       padding: 3rem;
-      font-size: 1.4em;
-      opacity: 0;
-      transform: rotateY(90deg) scale(0.8);
-      transition: all 1.2s ease-out;
-      background: linear-gradient(to right, #1f1f2e, #121218);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
       box-shadow: inset 0 0 60px #ff80ab33;
       position: relative;
-    }
-    .section.show {
-      opacity: 1;
-      transform: rotateY(0deg) scale(1);
+      transform-style: preserve-3d;
     }
     .section::before,
     .section::after {
@@ -65,14 +66,37 @@
     }
     .fade-text {
       opacity: 0;
-      animation: fadeInUp 4s ease forwards;
-      max-width: 90%;
+      animation: fadeInUp 3s ease forwards;
+      max-width: 85%;
+      font-size: 1.3em;
+      text-align: center;
       line-height: 1.8em;
-      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
+    }
+    .nav-btns {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+      z-index: 10;
+    }
+    .nav-btns button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background: #ff80ab;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff80ab88;
     }
     .hearts, .sparkles {
       position: fixed;
@@ -82,80 +106,79 @@
       left: 0;
       pointer-events: none;
       overflow: hidden;
+      z-index: 1;
     }
     .heart, .sparkle {
       position: absolute;
-      font-size: 2rem;
-      opacity: 0.7;
-      animation: float 6s linear infinite;
+      font-size: 1.5rem;
+      opacity: 0.6;
+      animation: float 8s linear infinite;
     }
-    .sparkle {
-      color: #fff59d;
-    }
+    .sparkle { color: #fff59d; }
     @keyframes float {
       0% { transform: translateY(100vh) rotate(0); opacity: 1; }
       100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
     }
-    audio {
-      display: none;
-    }
-    .final {
-      font-size: 2em;
-      margin-bottom: 3rem;
-      animation: glow 2s infinite alternate;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #fff; }
-      to { text-shadow: 0 0 20px #ff80ab; }
-    }
   </style>
 </head>
 <body>
-  <audio autoplay loop>
+  <audio id="bgMusic" autoplay loop>
     <source src="https://cdn.pixabay.com/download/audio/2023/03/06/audio_f2119a6a1c.mp3" type="audio/mpeg">
   </audio>
   <audio id="flipSound">
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_cfb9743a25.mp3" type="audio/mpeg">
   </audio>
+
   <h1>Happy Birthday, maya 🎉</h1>
-  <div class="section"><div class="fade-text">🎂 On this special day, the universe pauses to celebrate you. Your existence adds meaning to mine, like stars lighting up the darkest sky. I thank the heavens for you — for your light, love, and everything in between. 💫</div></div>
-  <div class="section"><div class="fade-text">🌌 You're not just beautiful on the outside, but breathtaking within. Your soul radiates kindness, your heart beats with empathy, and your smile heals hearts. Today, we don’t just celebrate your birth — we celebrate everything you are. 💖</div></div>
-  <div class="section"><div class="fade-text">🌠 My world began spinning in color the day you walked into it. You make every dull moment shine, every broken piece whole. You’re not a part of my life — you are my life. I love you beyond words. 🥺</div></div>
-  <div class="section"><div class="fade-text">🎶 In the symphony of life, you're my favorite melody. Your laughter is the rhythm I live for, your voice the chorus I replay in my mind. If I could, I’d write your name on every heartbeat. ❤️</div></div>
-  <div class="section"><div class="fade-text">🦋 You are grace wrapped in stardust, a gentle miracle walking this earth. You make love feel effortless, safe, and infinite. I fall for you every day — and today, I just want to hold you tighter. 🌷</div></div>
-  <div class="section final"><div class="fade-text">With all my heart and soul, forever yours,<br><strong>sparsh</strong> 💌</div></div>
+
+  <div class="slider" id="slider">
+    <div class="section"><div class="fade-text">🎂 Today, the universe smiles because you were born. You light up everything with your warmth and kindness. I’m endlessly grateful to have you, and today is just a small reminder of how magical you truly are. 💫</div></div>
+    <div class="section"><div class="fade-text">💖 Your laughter echoes in my soul, your eyes hold galaxies of love. You are poetry in motion, grace wrapped in a heartbeat. You’re more than love—you’re my forever muse. 🌌</div></div>
+    <div class="section"><div class="fade-text">🌷 You are the soft bloom in spring, the whisper of hope, the fire in a storm. My world is better because you’re in it. Every breath I take, I take loving you. 💞</div></div>
+    <div class="section"><div class="fade-text">🎶 In your presence, silence becomes a song. You make every heartbeat feel like a symphony. If I could, I’d live in every smile you share. 💗</div></div>
+    <div class="section"><div class="fade-text">🦋 You are the wish the stars granted me. You make love feel like flying—limitless, beautiful, real. I thank the universe every single day for you. ✨</div></div>
+    <div class="section"><div class="fade-text">💌 With all my soul, I love you endlessly, maya. Forever enchanted by your light.<br><strong>— sparsh</strong></div></div>
+  </div>
+
+  <div class="nav-btns">
+    <button onclick="prevSlide()">Prev</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+
   <div class="hearts" id="hearts"></div>
   <div class="sparkles" id="sparkles"></div>
+
   <script>
+    const slider = document.getElementById('slider');
     const sections = document.querySelectorAll('.section');
-    let current = 0;
     const flipSound = document.getElementById('flipSound');
+    let index = 0;
 
-    function showNext() {
-      if (current < sections.length) {
-        const section = sections[current];
-        section.classList.add('show');
-        flipSound.play();
-        current++;
-        setTimeout(showNext, 7000);
-      }
+    function updateSlide() {
+      slider.style.transform = `translateX(-${index * 100}vw)`;
+      flipSound.play();
     }
-
-    document.addEventListener('DOMContentLoaded', showNext);
+    function nextSlide() {
+      if (index < sections.length - 1) index++;
+      updateSlide();
+    }
+    function prevSlide() {
+      if (index > 0) index--;
+      updateSlide();
+    }
 
     function createFloaty(type, symbol, target) {
       const el = document.createElement('div');
       el.className = type;
       el.textContent = symbol;
       el.style.left = Math.random() * 100 + 'vw';
-      el.style.fontSize = 1 + Math.random() * 2 + 'rem';
-      el.style.animationDuration = 3 + Math.random() * 3 + 's';
+      el.style.fontSize = 1 + Math.random() * 1.5 + 'rem';
+      el.style.animationDuration = 4 + Math.random() * 3 + 's';
       document.getElementById(target).appendChild(el);
-      setTimeout(() => el.remove(), 6000);
+      setTimeout(() => el.remove(), 8000);
     }
-
-    setInterval(() => createFloaty('heart', '❤️', 'hearts'), 300);
-    setInterval(() => createFloaty('sparkle', '✨', 'sparkles'), 500);
+    setInterval(() => createFloaty('heart', '❤️', 'hearts'), 400);
+    setInterval(() => createFloaty('sparkle', '✨', 'sparkles'), 600);
   </script>
 </body>
 </html>
