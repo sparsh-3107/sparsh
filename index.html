@@ -11,10 +11,10 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to top right, #ffdde1, #ee9ca7);
+      background: #0f0f1b;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      color: #fff;
+      color: #ffffff;
       text-align: center;
       position: relative;
     }
@@ -35,31 +35,22 @@
       justify-content: center;
       flex-direction: column;
       padding: 2rem;
-      font-size: 1.5em;
+      font-size: 1.3em;
       opacity: 0;
       transform: translateY(30px);
       transition: all 1s ease-out;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
     }
     .section.show {
       opacity: 1;
       transform: translateY(0);
     }
-    .typewriter {
-      border-right: 2px solid #fff;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+    .fade-text {
+      opacity: 0;
+      animation: fadeIn 4s ease forwards;
     }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink {
-      50% { border-color: transparent; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .hearts, .sparkles {
       position: fixed;
@@ -104,24 +95,17 @@
 
   <h1>Happy Birthday, maya 🎉</h1>
 
-  <div class="section" style="background-image: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde');">
-    <div class="typewriter">🎈 Today is all about *you*, my sunshine — the brightest soul I know.</div>
-  </div>
-  <div class="section" style="background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70');">
-    <div class="typewriter">💫 With every smile, you sprinkle stardust into my life.✨</div>
-  </div>
-  <div class="section" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9');">
-    <div class="typewriter">🌸 You’re more than just special — you're a walking piece of magic.🪄</div>
-  </div>
-  <div class="section" style="background-image: url('https://images.unsplash.com/photo-1508614999368-9260051290bb');">
-    <div class="typewriter">🎶 Your voice, your laugh, your little quirks — they play the sweetest symphony in my heart.🎵</div>
-  </div>
-  <div class="section" style="background-image: url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846');">
-    <div class="typewriter">🦋 Watching you grow, smile, and shine is the best gift life gave me.🎁</div>
-  </div>
-  <div class="section final" style="background-image: url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d');">
-    <div class="typewriter">With all my heart — forever yours, <br><strong>sparsh</strong> ❤️</div>
-  </div>
+  <div class="section"><div class="fade-text">🎂 The world was blessed the day you were born. You’ve filled lives with happiness and love. Every moment with you feels like a dream wrapped in stardust. You are my miracle, my muse, and my moonlight. 🌙</div></div>
+
+  <div class="section"><div class="fade-text">🌟 Every time you smile, the stars blink a little brighter. You're the poetry in my silence, the calm in my chaos. Loving you is the most effortless thing — because you make life so beautiful, so worth living. 💫</div></div>
+
+  <div class="section"><div class="fade-text">💖 I still remember the first time I saw you — like a soft sunrise after a stormy night. You’ve brought warmth into places I didn’t know were cold. I am endlessly proud to know and love you. 🌸</div></div>
+
+  <div class="section"><div class="fade-text">🎶 Your voice feels like a lullaby for my soul. You bring music to my silence, and rhythm to my steps. Being loved by you is a song I want to play on repeat — forever. 🎧</div></div>
+
+  <div class="section"><div class="fade-text">🦋 You’re a masterpiece painted by the stars. Your presence heals, uplifts, and inspires. You’ve made me a better person, just by being *you*. On your birthday, I celebrate your existence. 🌷</div></div>
+
+  <div class="section final"><div class="fade-text">With all my love, always and forever,<br><strong>sparsh</strong> ❤️</div></div>
 
   <div class="hearts" id="hearts"></div>
   <div class="sparkles" id="sparkles"></div>
@@ -134,10 +118,8 @@
       if (current < sections.length) {
         const section = sections[current];
         section.classList.add('show');
-        const tw = section.querySelector('.typewriter');
-        tw.style.animation = 'typing 3s steps(40, end) forwards, blink 0.75s step-end infinite';
         current++;
-        setTimeout(showNext, 4500);
+        setTimeout(showNext, 6000);
       }
     }
 
