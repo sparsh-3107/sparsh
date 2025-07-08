@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday maya 🎉</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Happy Birthday maya ❤️🧿🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f1b;
+      background: radial-gradient(circle at top left, #1a1a2e, #0f0f1b);
       overflow-x: hidden;
       scroll-behavior: smooth;
       color: #ffffff;
       text-align: center;
-      position: relative;
     }
     h1 {
       font-size: 3em;
@@ -34,11 +32,13 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding: 2rem;
-      font-size: 1.3em;
+      padding: 3rem;
+      font-size: 1.4em;
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease-out;
+      transform: translateY(40px);
+      transition: all 1.2s ease-out;
+      background: linear-gradient(to right, #1f1f2e, #121218);
+      box-shadow: inset 0 0 60px #ff80ab33;
     }
     .section.show {
       opacity: 1;
@@ -46,11 +46,14 @@
     }
     .fade-text {
       opacity: 0;
-      animation: fadeIn 4s ease forwards;
+      animation: fadeInUp 4s ease forwards;
+      max-width: 90%;
+      line-height: 1.8em;
+      letter-spacing: 0.5px;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     .hearts, .sparkles {
       position: fixed;
@@ -95,17 +98,17 @@
 
   <h1>Happy Birthday, maya 🎉</h1>
 
-  <div class="section"><div class="fade-text">🎂 The world was blessed the day you were born. You’ve filled lives with happiness and love. Every moment with you feels like a dream wrapped in stardust. You are my miracle, my muse, and my moonlight. 🌙</div></div>
+  <div class="section"><div class="fade-text">🎂 On this special day, the universe pauses to celebrate you. Your existence adds meaning to mine, like stars lighting up the darkest sky. I thank the heavens for you — for your light, love, and everything in between. 💫</div></div>
 
-  <div class="section"><div class="fade-text">🌟 Every time you smile, the stars blink a little brighter. You're the poetry in my silence, the calm in my chaos. Loving you is the most effortless thing — because you make life so beautiful, so worth living. 💫</div></div>
+  <div class="section"><div class="fade-text">🌌 You're not just beautiful on the outside, but breathtaking within. Your soul radiates kindness, your heart beats with empathy, and your smile heals hearts. Today, we don’t just celebrate your birth — we celebrate everything you are. 💖</div></div>
 
-  <div class="section"><div class="fade-text">💖 I still remember the first time I saw you — like a soft sunrise after a stormy night. You’ve brought warmth into places I didn’t know were cold. I am endlessly proud to know and love you. 🌸</div></div>
+  <div class="section"><div class="fade-text">🌠 My world began spinning in color the day you walked into it. You make every dull moment shine, every broken piece whole. You’re not a part of my life — you are my life. I love you beyond words. 🥺</div></div>
 
-  <div class="section"><div class="fade-text">🎶 Your voice feels like a lullaby for my soul. You bring music to my silence, and rhythm to my steps. Being loved by you is a song I want to play on repeat — forever. 🎧</div></div>
+  <div class="section"><div class="fade-text">🎶 In the symphony of life, you're my favorite melody. Your laughter is the rhythm I live for, your voice the chorus I replay in my mind. If I could, I’d write your name on every heartbeat. ❤️</div></div>
 
-  <div class="section"><div class="fade-text">🦋 You’re a masterpiece painted by the stars. Your presence heals, uplifts, and inspires. You’ve made me a better person, just by being *you*. On your birthday, I celebrate your existence. 🌷</div></div>
+  <div class="section"><div class="fade-text">🦋 You are grace wrapped in stardust, a gentle miracle walking this earth. You make love feel effortless, safe, and infinite. I fall for you every day — and today, I just want to hold you tighter. 🌷</div></div>
 
-  <div class="section final"><div class="fade-text">With all my love, always and forever,<br><strong>sparsh</strong> ❤️</div></div>
+  <div class="section final"><div class="fade-text">With all my heart and soul, forever yours,<br><strong>sparsh</strong> 💌</div></div>
 
   <div class="hearts" id="hearts"></div>
   <div class="sparkles" id="sparkles"></div>
@@ -119,7 +122,7 @@
         const section = sections[current];
         section.classList.add('show');
         current++;
-        setTimeout(showNext, 6000);
+        setTimeout(showNext, 7000);
       }
     }
 
